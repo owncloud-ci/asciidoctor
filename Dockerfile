@@ -9,9 +9,8 @@ ENTRYPOINT ["/usr/bin/entrypoint"]
 CMD ["asciidoctor"]
 
 RUN apt-get update -y && \
-  apt-get upgrade -y
-
-RUN apt-get install -y ruby ruby-dev zlib1g-dev libxml2-dev bison cmake build-essential && \
+  apt-get upgrade -y && \
+  apt-get install -y make ruby ruby-dev zlib1g-dev libxml2-dev bison cmake build-essential && \
   gem install --no-ri --no-rdoc asciidoctor asciidoctor-pdf:1.5.0.alpha.16 rouge coderay pygments.rb && \
   apt-get purge -y ruby-dev zlib1g-dev libxml2-dev bison cmake build-essential && \
   apt-get autoremove -y && \
