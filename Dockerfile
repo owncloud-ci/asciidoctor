@@ -11,7 +11,7 @@ CMD ["asciidoctor"]
 RUN apt-get update -y && \
   apt-get upgrade -y && \
   apt-get install -y make ruby ruby-dev zlib1g-dev libxml2-dev bison cmake build-essential && \
-  gem install --no-ri --no-rdoc asciidoctor asciidoctor-pdf:1.5.0.alpha.16 rouge coderay pygments.rb && \
+  gem install --no-ri --no-rdoc asciidoctor asciidoctor-pdf:1.5.0.alpha.16 rouge coderay pygments.rb concurrent-ruby && \
   apt-get purge -y ruby-dev zlib1g-dev libxml2-dev bison cmake build-essential && \
   apt-get autoremove -y && \
   apt-get clean -y && \
