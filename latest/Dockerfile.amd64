@@ -5,9 +5,6 @@ LABEL maintainer="ownCloud DevOps <devops@owncloud.com>" \
   org.label-schema.vendor="ownCloud GmbH" \
   org.label-schema.schema-version="1.0"
 
-ENTRYPOINT ["/usr/bin/entrypoint"]
-CMD ["asciidoctor"]
-
 RUN apt-get update -y && \
   apt-get upgrade -y && \
   apt-get install -y tree make graphicsmagick-imagemagick-compat graphicsmagick-libmagick-dev-compat ruby ruby-dev zlib1g-dev libxml2-dev bison cmake build-essential && \
@@ -18,3 +15,6 @@ RUN apt-get update -y && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 COPY rootfs /
+
+ENTRYPOINT ["/usr/bin/entrypoint"]
+CMD ["asciidoctor"]
