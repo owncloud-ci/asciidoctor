@@ -13,7 +13,7 @@ ARG ASCIIDOCTOR_PDF_VERSION
 # renovate: datasource=rubygems depName=asciidoctor
 ENV ASCIIDOCTOR_VERSION="${BUILD_VERSION:-2.0.10}"
 # renovate: datasource=rubygems depName=asciidoctor-pdf
-ENV ASCIIDOCTOR_PDF_VERSION="${ASCIIDOCTOR_PDF_VERSION:-1.5.0}"
+ENV ASCIIDOCTOR_PDF_VERSION="${ASCIIDOCTOR_PDF_VERSION:-1.5.4}"
 
 RUN apt-get update -y && \
   apt-get upgrade -y && \
