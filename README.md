@@ -2,7 +2,7 @@
 
 [![Build Status](https://drone.owncloud.com/api/badges/owncloud-ci/asciidoctor/status.svg)](https://drone.owncloud.com/owncloud-ci/asciidoctor)
 
-Ascriidoctor image for CI pipelines.
+Asciidoctor image for CI pipelines.
 
 ## License
 
