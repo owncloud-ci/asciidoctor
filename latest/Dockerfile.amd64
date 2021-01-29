@@ -7,10 +7,18 @@ LABEL org.opencontainers.image.url="https://github.com/owncloud-ci/asciidoctor"
 LABEL org.opencontainers.image.source="https://github.com/owncloud-ci/asciidoctor"
 LABEL org.opencontainers.image.documentation="https://github.com/owncloud-ci/asciidoctor"
 
+ARG BUILD_VERSION
+ARG ASCIIDOCTOR_PDF_VERSION
+
+# renovate: datasource=rubygems depName=asciidoctor
+ENV ASCIIDOCTOR_VERSION="${BUILD_VERSION:-2.0.10}"
+# renovate: datasource=rubygems depName=asciidoctor-pdf
+ENV ASCIIDOCTOR_PDF_VERSION="${ASCIIDOCTOR_PDF_VERSION:-1.5.0}"
+
 RUN apt-get update -y && \
   apt-get upgrade -y && \
   apt-get install -y tree make graphicsmagick-imagemagick-compat graphicsmagick-libmagick-dev-compat ruby ruby-dev zlib1g-dev libxml2-dev bison cmake build-essential && \
-  gem install --no-ri --no-rdoc asciidoctor asciidoctor-pdf:1.5.0 rouge coderay pygments.rb concurrent-ruby prawn-gmagick && \
+  gem install --no-ri --no-rdoc "asciidoctor:$ASCIIDOCTOR_VERSION" "asciidoctor-pdf:$ASCIIDOCTOR_PDF_VERSION" rouge coderay pygments.rb concurrent-ruby prawn-gmagick && \
   apt-get purge -y ruby-dev zlib1g-dev libxml2-dev bison cmake build-essential && \
   apt-get autoremove -y && \
   apt-get clean -y && \
