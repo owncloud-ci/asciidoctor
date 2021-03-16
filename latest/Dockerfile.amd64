@@ -2,7 +2,7 @@ FROM owncloud/ubuntu:20.04@sha256:669de04de5f10a1300a9497f51691eea1cd6a08645b09c
 
 LABEL maintainer="ownCloud DevOps <devops@owncloud.com>"
 LABEL org.opencontainers.image.authors="ownCloud DevOps <devops@owncloud.com>"
-LABEL org.opencontainers.image.title="ownCloud CI Alpine"
+LABEL org.opencontainers.image.title="ownCloud CI AsciiDoctor"
 LABEL org.opencontainers.image.url="https://github.com/owncloud-ci/asciidoctor"
 LABEL org.opencontainers.image.source="https://github.com/owncloud-ci/asciidoctor"
 LABEL org.opencontainers.image.documentation="https://github.com/owncloud-ci/asciidoctor"
