@@ -11,7 +11,7 @@ ARG BUILD_VERSION
 ARG ASCIIDOCTOR_PDF_VERSION
 
 # renovate: datasource=rubygems depName=asciidoctor
-ENV ASCIIDOCTOR_VERSION="${BUILD_VERSION:-2.0.15}"
+ENV ASCIIDOCTOR_VERSION="${BUILD_VERSION:-2.0.16}"
 # renovate: datasource=rubygems depName=asciidoctor-pdf
 ENV ASCIIDOCTOR_PDF_VERSION="${ASCIIDOCTOR_PDF_VERSION:-1.6.0}"
 
