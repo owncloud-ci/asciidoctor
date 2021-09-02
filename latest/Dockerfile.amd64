@@ -16,9 +16,9 @@ ENV ASCIIDOCTOR_VERSION="${BUILD_VERSION:-2.0.16}"
 ENV ASCIIDOCTOR_PDF_VERSION="${ASCIIDOCTOR_PDF_VERSION:-1.6.0}"
 
 RUN apt-get update -y && \
-  apt-get install -y tree make graphicsmagick-imagemagick-compat graphicsmagick-libmagick-dev-compat ruby ruby-dev zlib1g-dev libxml2-dev bison cmake build-essential && \
+  apt-get install -y tree make graphicsmagick-imagemagick-compat graphicsmagick-libmagick-dev-compat ruby ruby-dev zlib1g-dev libxml2-dev bison cmake build-essential libgraphicsmagick1-dev && \
   gem install --no-document "asciidoctor:$ASCIIDOCTOR_VERSION" "asciidoctor-pdf:$ASCIIDOCTOR_PDF_VERSION" rouge coderay pygments.rb concurrent-ruby prawn-gmagick && \
-  apt-get purge -y ruby-dev zlib1g-dev libxml2-dev bison cmake build-essential && \
+  apt-get purge -y zlib1g-dev libxml2-dev bison cmake && \
   apt-get autoremove -y && \
   apt-get clean -y && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
