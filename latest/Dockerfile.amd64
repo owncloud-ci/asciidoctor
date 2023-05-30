@@ -13,7 +13,7 @@ ARG ASCIIDOCTOR_PDF_VERSION
 # renovate: datasource=rubygems depName=asciidoctor
 ENV ASCIIDOCTOR_VERSION="${BUILD_VERSION:-2.0.20}"
 # renovate: datasource=rubygems depName=asciidoctor-pdf
-ENV ASCIIDOCTOR_PDF_VERSION="${ASCIIDOCTOR_PDF_VERSION:-2.3.6}"
+ENV ASCIIDOCTOR_PDF_VERSION="${ASCIIDOCTOR_PDF_VERSION:-2.3.7}"
 
 RUN apt-get update -y && \
   apt-get install -y tree make graphicsmagick-imagemagick-compat graphicsmagick-libmagick-dev-compat ruby ruby-dev zlib1g-dev libxml2-dev bison cmake build-essential libgraphicsmagick1-dev && \
